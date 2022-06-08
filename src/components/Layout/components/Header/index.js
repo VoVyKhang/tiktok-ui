@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faSpinner, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faSignIn, faSpinner, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 
+import Buttion from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
@@ -56,7 +57,10 @@ function Header() {
                     </div>
                 </Tippy>
 
-                <div className={cx('actions')}></div>
+                <div className={cx('actions')}>
+                    <Buttion text>Upload</Buttion>
+                    <Buttion primary>Log in</Buttion>
+                </div>
             </div>
         </header>
     );
