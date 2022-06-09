@@ -1,10 +1,10 @@
 import classNames from 'classnames/bind';
-import styles from './Buttion.module.scss';
+import styles from './Button.module.scss';
 import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-function Buttion({
+function Button({
     to,
     href,
     primary = false,
@@ -57,9 +57,11 @@ function Buttion({
 
     return (
         <Comp className={classes} {...props}>
+            {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
             <span className={cx('title')}>{children}</span>
+            {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
         </Comp>
     );
 }
 
-export default Buttion;
+export default Button;
