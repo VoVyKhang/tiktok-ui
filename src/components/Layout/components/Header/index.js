@@ -2,18 +2,13 @@ import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faCircle,
-    faCloudUpload,
     faCoins,
-    faEarthAsia,
     faEllipsisVertical,
     faGear,
     faGlobeAsia,
     faKeyboard,
     faMagnifyingGlass,
-    faMessage,
     faQuestionCircle,
-    faSignIn,
     faSignOut,
     faSpinner,
     faTimesCircle,
@@ -29,6 +24,8 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
 import 'tippy.js/dist/tippy.css';
+import { UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -147,7 +144,7 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -159,7 +156,7 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/f75993e97bd5424690cb3c702fc88b0d~c5_100x100.jpeg?x-expires=1655020800&x-signature=LzXnxoWQTyIqW%2BrJN8xXVVp%2FeNY%3D"
                                 className={cx('user-avatar')}
                                 alt="Dao Le Phuong Hoa"
